@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#002C91"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="다음을 입력해주세요."
+        android:textColor="@android:color/white"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/start"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="출발지"/>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="15dp"/>
+
+    <EditText
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:id="@+id/stopover"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="경유지"/>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="15dp"/>
+
+    <EditText
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        android:id="@+id/destination"
+        android:textColor="@android:color/white"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:hint="도착지"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn"
+            android:textSize="25dp"
+            android:textColor="#FFFFFF"
+            android:background="#00FFFFFF"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Search"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:textSize="25dp"
+            android:background="#00FFFFFF"
+            android:textColor="#FFFFFF"
+
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:onClick="initial"
+            android:text="Initialize"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
