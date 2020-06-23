@@ -112,6 +112,26 @@ public class MainActivity extends Activity {
                 }
                 String Stopover = input_stopover.getText().toString();
                 if(Stopover.equals("")){
+
+                        Intent intent = new Intent(getApplicationContext(),NewActivity.class);
+                        passingRoute += start + destination;
+                        intent.putExtra("route", passingRoute);
+                        ArrayList<String> route=new ArrayList<>();
+                        route.add(start);
+                        route.add(destination);
+                        intent.putExtra("node",route);
+                        ArrayList<String> stops = new ArrayList<>();
+                        DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(start,destination);
+                        double distance = dijkstra.getDistance();
+                        stops = dijkstra.getStops();
+                        intent.putExtra("stopover", stops);
+                        passingDistance = distance;
+                        intent.putExtra("total", passingDistance);
+                        intent.putExtra("start", start);
+                        intent.putExtra("destination", destination);
+                        startActivity(intent);
+                        stops.clear();
+
                     Stopover="no,no";
 
                 }
@@ -169,8 +189,9 @@ public class MainActivity extends Activity {
                     stops.clear();
 
                 } else {
-                    Toast.makeText(getApplicationContext(), total_check+" 잘못되었습니다!",
-                            Toast.LENGTH_SHORT).show();
+                    if(!Stopover.equals("no,no"))
+                    {Toast.makeText(getApplicationContext(), total_check+" 잘못되었습니다!",
+                            Toast.LENGTH_SHORT).show();}
                     total_check="";
                 }
 
